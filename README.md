@@ -17,6 +17,16 @@ An instrument cluster, also known as a dashboard cluster or gauge cluster, is a 
 
 ## Software Design
 
+## Configuration
+### Display - WaveShare 7.9inch SDI LCD
+After we have written RaspberryPi OS (Debian Bookwarm, 64bit) to a sd card, we have added lines below to 'config.txt' at the root of the sd card file system. And ejected the sd card and boot up our Raspberry Pi, and we were able to see the display working as expected.
+```
+(...)
+# WaveShare 7.9inch LCD
+dtoverlay=vc4-kms-v3d
+dtoverlay=vc4-kms-dsi-waveshare-panel,7_9_inch
+```
+
 ## Result
 
 ## Conclusion
