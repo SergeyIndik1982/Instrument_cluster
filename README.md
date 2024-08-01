@@ -29,6 +29,21 @@ dtoverlay=vc4-kms-dsi-waveshare-panel,7_9_inch
 ### SeeedStudio 2-CH CAN HAT for Raspberry Pi
 [Followed instructions on here](https://wiki.seeedstudio.com/2-Channel-CAN-BUS-FD-Shield-for-Raspberry-Pi/)
 
+### Auto start Instrument Cluster at booting
+```
+# /etc/xdg/autostart/InstrumentCluster.desktop
+
+[Desktop Entry]
+Type=Application
+Exec=/path/to/your/application
+Hidden=false
+NoDisplay=false
+X-GNOME-Autostart-enabled=true
+Name[en_US]=My Application
+Name=My Application
+Comment[en_US]=Start My Application at startup
+Comment=Start My Application at startup
+```
 ## Result
 
 ## Conclusion
