@@ -35,14 +35,14 @@ dtoverlay=vc4-kms-dsi-waveshare-panel,7_9_inch
 
 [Desktop Entry]
 Type=Application
-Exec=/path/to/your/application
+Exec=/home/pi/InstrumentCluster
 Hidden=false
 NoDisplay=false
 X-GNOME-Autostart-enabled=true
-Name[en_US]=My Application
-Name=My Application
-Comment[en_US]=Start My Application at startup
-Comment=Start My Application at startup
+Name[en_US]=InstrumentCluster
+Name=InstrumentCluster
+Comment[en_US]=Start Instrument Cluster at startup
+Comment=Start Instrument Cluster at startup
 ```
 ## Result
 
