@@ -26,6 +26,35 @@ After we have written RaspberryPi OS (Debian Bookwarm, 64bit) to a sd card, we h
 dtoverlay=vc4-kms-v3d
 dtoverlay=vc4-kms-dsi-waveshare-panel,7_9_inch
 ```
+### WaveShare 2-CH CAN HAT
+#### bcm2835
+```
+wget http://www.airspayce.com/mikem/bcm2835/bcm2835-1.60.tar.gz
+tar zxvf bcm2835-1.60.tar.gz 
+cd bcm2835-1.60/
+sudo ./configure
+sudo make
+sudo make check
+sudo make install
+# For More: http://www.airspayce.com/mikem/bcm2835/
+```
+#### WiringPi
+```
+git clone https://github.com/WiringPi/WiringPi
+cd WiringPi
+./build debian
+ls debian-template/*deb
+```
+#### Python libraries
+```
+sudo apt-get update
+sudo apt-get install python3-pip
+sudo apt-get install python3-pil
+sudo apt-get install python3-numpy
+sudo pip3 install RPi.GPIO
+sudo pip3 install spidev 
+sudo pip3 install python-can
+```
 
 ## Result
 
