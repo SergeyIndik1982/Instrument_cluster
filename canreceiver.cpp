@@ -4,7 +4,7 @@
 #include <QProcess>
 
 CanReceiver::CanReceiver(QObject *parent)
-    : QObject(parent), canDevice(nullptr), expectedId(0x100)
+    : QObject(parent), canDevice(nullptr), expectedId(0x100), emaFilter(0.25)
 {
 }
 
@@ -62,7 +62,7 @@ void CanReceiver::processReceivedFrames()
         {
             qDebug() << "Invalid CAN frame received";
             qDebug() << "Frame: " << frame.toString();
-            // continue;
+            continue;
         }
 
         const int messageId = frame.frameId();
@@ -70,55 +70,22 @@ void CanReceiver::processReceivedFrames()
 
         if (messageId != this->expectedId)
         {
-            // continue;
+            continue;
         }
 
         QByteArray payload = frame.payload();
 
         if (payload.size() == sizeof(float))
         {
-            float speed = 0.0;
-            memcpy(&speed, payload.constData(), sizeof(float));
+            unsigned int scaledSpeed = 0;
+            memcpy(&scaledSpeed, payload.constData(), sizeof(unsigned int));
+            float speed = this->emaFilter.calculateFilteredOutput((float)(scaledSpeed / this->SCALE));
+            if (speed < 1)
+            {
+                this->emaFilter.setEma(0.0);
+            }
             qDebug() << "Speed (cm/s): " << speed;
             emit speedUpdated(speed);
         }
     }
 }
-
-// void CanReceiver::processReceivedFrames()
-// {
-//     if (!this->canDevice)
-//     {
-//         qDebug() << "canDevice is NULL";
-//         return;
-//     }
-
-//     while (this->canDevice->framesAvailable())
-//     {
-//         qDebug() << "Message received";
-//         const QCanBusFrame frame = this->canDevice->readFrame();
-
-//         // if (frame.isValid())
-//         // {
-//             const int messageId = frame.frameId();
-//             qDebug() << "Message ID: " << messageId;
-
-//             // if (messageId != this->expectedId)
-//             // {
-//                 // continue;
-//             // }
-
-//             QByteArray payload = frame.payload();
-
-//             qDebug() << "payload size: " << payload.size();
-
-//             int speed = static_cast<unsigned char>(payload[0]);
-//                 qDebug() << "Emit speedUpdated signal";
-//                 emit speedUpdated(speed);
-//         // }
-//         // else
-//         // {
-//             // qDebug() << "Invalid Can Frame: " << frame.toString();
-//         // }
-//     }
-// }

@@ -1,24 +1,35 @@
+#include <QThread>
+
 #include "mainwindow.h"
-#include "speedometer.h"
-#include "canreceiver.h"
 #include "./ui_mainwindow.h"
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
-    , canReceiver(new CanReceiver(this))
+    , canReceiverThread(new CanReceiverThread(this))
 {
     ui->setupUi(this);
     this->setWindowTitle("Instrument Cluster");
-    this->setFixedSize(1280, 400);
+    this->setFixedSize(SCREEN_WIDTH, SCREEN_HEIGHT);
     this->setStyleSheet("background-color: black");
 
     this->speedometer = new Speedometer(this);
     setCentralWidget(this->speedometer);
 
-    connect(canReceiver, &CanReceiver::speedUpdated, this, &MainWindow::updateSpeed);
+    connect(this->canReceiverThread->getCanReceiver()
+            , &CanReceiver::speedUpdated
+            , this
+            , &MainWindow::updateSpeed);
+    connect(this->canReceiverThread
+            , &QThread::finished
+            , this->canReceiverThread->getCanReceiver()
+            , &CanReceiver::deleteLater);
+    connect(this->canReceiverThread
+            , &QThread::finished
+            , this->canReceiverThread->getCanReceiver()
+            , &QThread::deleteLater);
 
-    canReceiver->startReceiving("can1");
+    this->canReceiverThread->start();
 }
 
 MainWindow::~MainWindow()
