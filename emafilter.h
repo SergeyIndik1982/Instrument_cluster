@@ -1,23 +1,22 @@
 #ifndef EMAFILTER_H
 #define EMAFILTER_H
 
-class EmaFilter // Exponention Moving Average Filter
+class EmaFilter
 {
 public:
-    EmaFilter(float alpha);
+    explicit EmaFilter(float alpha = 0.25);
     ~EmaFilter();
 
-    float	getEma() const;
-    void	setEma(float value);
-    void    setAlpha(float value);
-    float   calculateFilteredOutput(float value);
-
+    // Объявления методов
+    float getEma() const;
+    void setEma(float value);
+    void setAlpha(float value);
+    float calculateFilteredOutput(float value);
 
 private:
-    float	alpha;
-    float	oneMinusAlpha;
-
-    float	ema;
+    float alpha;
+    float oneMinusAlpha;
+    float ema;
 };
 
 #endif // EMAFILTER_H

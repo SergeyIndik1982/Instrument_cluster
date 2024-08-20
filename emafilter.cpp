@@ -1,6 +1,7 @@
 #include "emafilter.h"
 
-EmaFilter::EmaFilter(float alpha) : alpha(alpha), oneMinusAlpha(1 - alpha), ema(0.0)
+EmaFilter::EmaFilter(float alpha)
+    : alpha(alpha), oneMinusAlpha(1 - alpha), ema(0.0)
 {}
 
 EmaFilter::~EmaFilter()
@@ -25,6 +26,5 @@ void EmaFilter::setAlpha(float value)
 float EmaFilter::calculateFilteredOutput(float value)
 {
     this->ema = this->alpha * value + this->oneMinusAlpha * ema;
-
     return this->ema;
 }

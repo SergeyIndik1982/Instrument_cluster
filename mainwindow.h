@@ -3,40 +3,58 @@
 
 #include "speedometer.h"
 #include "canreceiverthread.h"
+#include "kalmanfilter.h"
+#include "smafilter.h"
+#include "emafilter.h"
 #include <QPushButton>
 #include <QWidget>
-#include "emafilter.h"
-
 #include <QMainWindow>
 
-QT_BEGIN_NAMESPACE
 namespace Ui {
 class MainWindow;
 }
-QT_END_NAMESPACE
 
 class MainWindow : public QMainWindow
 {
     Q_OBJECT
 
 public:
-    MainWindow(QWidget *parent = nullptr);
+    explicit MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
+    // Перечисление для типов фильтров
+    enum FilterType {
+        NO_FILTER,
+        EMA,
+        SMA,
+        KALMAN,
+        FILTER_COUNT // Количество фильтров
+    };
+
+    // Геттер для текущего фильтра
+    FilterType getCurrentFilter() const;
+
+    // Сеттер для установки типа фильтра
+    void setFilterType(FilterType filterType);
+
 private slots:
-    void updateSpeed(double speed);
-    void onFlatterFilterButtonClicked();
+    void updateSpeed(double speed);           // Обновление скорости с применением фильтра
+    void onFlatterFilterButtonClicked();      // Обработка нажатия кнопки для смены фильтра
 
 private:
-    Ui::MainWindow		*ui;
-    Speedometer			*speedometer;
-    CanReceiverThread	*canReceiverThread;
-    QPushButton *flatterFilterButton;
-    bool isBlack;
+    Ui::MainWindow *ui;
+    Speedometer *speedometer;                 // Виджет спидометра
+    CanReceiverThread *canReceiverThread;     // Поток для получения данных с CAN-шины
+    QPushButton *flatterFilterButton;         // Кнопка для смены фильтра
 
-    const int	SCREEN_WIDTH = 1280;
-    const int	SCREEN_HEIGHT = 400;
+    KalmanFilter kalmanFilter;                // Объект KalmanFilter
+    SmaFilter smaFilter;                      // Объект SmaFilter
+    EmaFilter emaFilter;                      // Объект EmaFilter
 
+    const int SCREEN_WIDTH = 1280;            // Ширина окна
+    const int SCREEN_HEIGHT = 400;            // Высота окна
+
+    FilterType currentFilter;  // Текущий тип фильтра
 };
 
 #endif // MAINWINDOW_H

@@ -4,7 +4,9 @@
 #include <QProcess>
 
 CanReceiver::CanReceiver(QObject *parent)
-    : QObject(parent), canDevice(nullptr), expectedId(0x100), emaFilter(0.25)
+    : QObject(parent),
+    canDevice(nullptr),
+    expectedId(0x100)
 {
 }
 
@@ -79,18 +81,15 @@ void CanReceiver::processReceivedFrames()
         {
             unsigned int scaledSpeed = 0;
             memcpy(&scaledSpeed, payload.constData(), sizeof(unsigned int));
-            float speed = this->emaFilter.calculateFilteredOutput((float)(scaledSpeed / this->SCALE));
-            if (speed < 1)
-            {
-                this->emaFilter.setEma(0.0);
-            }
-            qDebug() << "Speed (cm/s): " << speed;
-            emit speedUpdated(speed);
+            int rawSpeed = static_cast<int>(scaledSpeed / this->SCALE);
+
+            float filteredSpeed = static_cast<float>(rawSpeed);
+
+            // В зависимости от выбранного фильтра, фильтрация будет происходить в MainWindow
+            // Фильтр будет применяться в MainWindow перед вызовом updateSpeed
+
+            qDebug() << "Speed (cm/s): " << filteredSpeed;
+            emit speedUpdated(filteredSpeed);
         }
     }
-}
-
-EmaFilter& CanReceiver::getEmaFilter()
-{
-    return this->emaFilter;
 }

@@ -25,6 +25,10 @@ set(PROJECT_SOURCES
         canreceiverthread.h
         emafilter.cpp
         emafilter.h
+        smafilter.h
+        smafilter.cpp
+        kalmanfilter.h
+        kalmanfilter.cpp
 )
 
 if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
