@@ -39,8 +39,9 @@ void countPulses() {
 }
 
 void calculateAndSendSpeedData() {
+  unsigned int currentPulses;
   noInterrupts();
-  const unsigned int currentPulses = speedPulses;
+  currentPulses = speedPulses;
   speedPulses = 0;
   interrupts();
 
@@ -51,6 +52,4 @@ void calculateAndSendSpeedData() {
   memcpy(canMsg.data, &scaledSpeedCmPerS, sizeOfUnsignedLong);
 
   mcp2515.sendMessage(&canMsg);
-  Serial.print("Speed (cm/s): ");
-  Serial.println(scaledSpeedCmPerS);
 }

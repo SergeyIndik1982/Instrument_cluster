@@ -20,19 +20,19 @@ float Filter::calculateOutput(float value)
 
     if (this->isFilterOn)
     {
-        return filteredValue;
+        return filteredValue < 1.0f ? 0 : filteredValue;
     }
     return value;
 }
 
-bool Filter::getIsFilterOn()
+bool Filter::getIsFilterOn() const
 {
     return this->isFilterOn;
 }
 
-void Filter::setIsFilterOn(bool inOn)
+void Filter::setIsFilterOn(bool isOn)
 {
-    this->isFilterOn = inOn;
+    this->isFilterOn = isOn;
 }
 
 void Filter::setEma(float ema)

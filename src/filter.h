@@ -1,17 +1,20 @@
 #ifndef FILTER_H
 #define FILTER_H
 
+#include <QObject>
 #include <deque>
 
-class Filter {
+class Filter : public QObject {
+    Q_OBJECT
+
 public:
     Filter(float emaAlpha, int smaWindowSize);
 
-    float	calculateOutput(float value);
+    Q_INVOKABLE float	calculateOutput(float value);
 
-    bool	getIsFilterOn();
+    Q_INVOKABLE bool	getIsFilterOn() const;
 
-    void	setIsFilterOn(bool isOn);
+    Q_INVOKABLE void	setIsFilterOn(bool isOn);
     void	setEma(float ema);
     void	setSmaWindowSize(int size);
 
