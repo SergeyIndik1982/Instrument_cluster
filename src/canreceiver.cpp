@@ -79,21 +79,5 @@ void CanReceiver::processReceivedFrames()
         }
 
         this->payloadQueue.push(frame.payload());
-
-        // if (payload.size() == sizeof(float))
-        // {
-        //     unsigned int scaledSpeed = 0;
-        //     memcpy(&scaledSpeed, payload.constData(), sizeof(unsigned int));
-
-        //     float speed = this->filter->calculateOutput((float)(scaledSpeed / this->SCALE));
-        //     if (speed < 1)
-        //     {
-        //         this->filter->setEma(0.0);
-        //     }
-
-        //     qDebug() << "Speed (cm/s): " << speed;
-
-        //     emit speedUpdated(speed);
-        // }
     }
 }

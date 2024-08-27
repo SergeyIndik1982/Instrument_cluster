@@ -1,20 +1,19 @@
 #include "speedupdatemanager.h"
 
 #include <QCanBusDevice>
+#include <QDataStream>
 #include <QDebug>
 
 SpeedUpdateManager::SpeedUpdateManager(QObject *parent)
     : QObject{parent}
     , canReceiver(new CanReceiver(this, 0x100, "can1"))
-    , filter(new Filter(0.3, 5))
+    , filterManager(new FilterManager(this))
 {
     this->canReceiver->createCanDevice();
 }
 
 SpeedUpdateManager::~SpeedUpdateManager()
-{
-    delete this->filter;
-}
+{}
 
 void SpeedUpdateManager::start() const
 {
@@ -28,9 +27,9 @@ void SpeedUpdateManager::start() const
     }
 }
 
-Filter* SpeedUpdateManager::getFilter()
+FilterManager* SpeedUpdateManager::getFilterManager() const
 {
-    return this->filter;
+    return this->filterManager;
 }
 
 void SpeedUpdateManager::processSpeedData()
@@ -44,16 +43,17 @@ void SpeedUpdateManager::processSpeedData()
         if (payload.size() == sizeof(uint32_t))
         {
             unsigned int scaledSpeed = 0;
-            memcpy(&scaledSpeed, payload.constData(), sizeof(uint32_t));
 
-            float speed = this->filter->calculateOutput(static_cast<float>(scaledSpeed / this->SCALE_FACTOR));
-            if (speed < 1)
+            QDataStream stream(payload);
+            stream.setByteOrder(QDataStream::LittleEndian);
+            stream >> scaledSpeed;
+
+            float speed = this->filterManager->filter(static_cast<float>(scaledSpeed / this->SCALE_FACTOR));
+            if (speed < 1.0f)
             {
-                this->filter->setEma(0.0);
+                this->filterManager->reset();
+                speed = 0.0f;
             }
-
-            qDebug() << "Speed (cm/s): " << speed;
-
             emit speedUpdated(speed);
         }
     }

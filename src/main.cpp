@@ -23,12 +23,15 @@ int main(int argc, char *argv[])
         engine.rootContext()->setContextProperty("speedUpdateManager", &speedUpdateManager);
         qmlRegisterType<SpeedUpdateManager>("InstrumentCluster", 1, 0, "SpeedUpdateManager");
 
+        engine.rootContext()->setContextProperty("filterManager", speedUpdateManager.getFilterManager());
+        qmlRegisterType<FilterManager>("InstrumentCluster", 1, 0, "SpeedUpdateManager");
+
         speedUpdateManager.start();
 
         engine.load(QUrl(QStringLiteral("qrc:/main.qml")));
         if (engine.rootObjects().isEmpty())
         {
-            return -1;
+            return 1;
         }
 
         return app.exec();

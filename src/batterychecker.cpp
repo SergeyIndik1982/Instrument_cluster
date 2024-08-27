@@ -1,6 +1,6 @@
 #include "batterychecker.h"
 
-BatteryChecker::BatteryChecker(QObject *parent) : QObject(parent)
+BatteryChecker::BatteryChecker(QObject *parent) : QObject(parent), batteryLevel(0)
 {
     connect(&this->process, &QProcess::readyReadStandardOutput, this, &BatteryChecker::handleProcessStandardOutput);
 }
