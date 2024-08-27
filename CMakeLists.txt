@@ -20,21 +20,30 @@ set(PROJECT_SOURCES
         src/main.cpp
         src/canreceiver.h
         src/canreceiver.cpp
-        src/filter.cpp
-        src/filter.h
         src/batterychecker.cpp
         src/batterychecker.h
         src/speedupdatemanager.h
         src/speedupdatemanager.cpp
-        src/resources.qrc
-        src/main.qml
-        src/Speedometer.qml
+        src/filter/filtermanager.h
+        src/filter/filtermanager.cpp
+        src/filter/ifilter.h
+        src/filter/emafilter.cpp
+        src/filter/emafilter.h
+        src/filter/smafilter.h
+        src/filter/smafilter.cpp
+        src/filter/kalmanfilter.h
+        src/filter/kalmanfilter.cpp
+        src/qml/resources.qrc
+        src/qml/main.qml
+        src/qml/Speedometer.qml
+        src/qml/FilterButtons.qml
 )
 
 if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
     qt_add_executable(InstrumentCluster
         MANUAL_FINALIZATION
         ${PROJECT_SOURCES}
+
     )
 # Define target properties for Android with Qt 6 as:
 #    set_property(TARGET InstrumentCluster APPEND PROPERTY QT_ANDROID_PACKAGE_SOURCE_DIR
