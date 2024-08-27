@@ -4,26 +4,25 @@
 #include <QObject>
 
 #include "canreceiver.h"
-#include "filter.h"
+#include "./filter/filtermanager.h"
 
 class SpeedUpdateManager : public QObject
 {
     Q_OBJECT
-    Q_PROPERTY(Filter* filter READ getFilter CONSTANT)
 public:
     explicit SpeedUpdateManager(QObject *parent = nullptr);
     ~SpeedUpdateManager();
 
     void start() const;
 
-    Q_INVOKABLE Filter* getFilter();
+    FilterManager* getFilterManager() const;
 
 signals:
     void speedUpdated(double speed);
 
 private:
-    CanReceiver*	canReceiver;
-    Filter*			filter;
+    CanReceiver* canReceiver;
+    FilterManager* filterManager;
 
     const float	SCALE_FACTOR = 10000.0;
 
