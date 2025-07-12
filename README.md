@@ -14,6 +14,7 @@ An instrument cluster, also known as a dashboard cluster or gauge cluster, is a 
 [What is Bare Metal?](https://github.com/SEA-ME-DES-01-Instrument-Cluster/Instrument_cluster/wiki/What-is-Bare-Metal%3F#what-is-bare-metal)
 
 ## System Architecture
+<img width="811" height="352" alt="image" src="https://github.com/user-attachments/assets/7c7e426c-a202-445f-92a1-264c7668ca94" />
 
 ## Software Design
 
