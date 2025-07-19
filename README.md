@@ -16,14 +16,22 @@ An instrument cluster, also known as a dashboard cluster or gauge cluster, is a 
 ## System Architecture
 <img width="811" height="352" alt="image" src="https://github.com/user-attachments/assets/7c7e426c-a202-445f-92a1-264c7668ca94" />
 ## Components and Environment
-WaveShare JetRacer AI Kit)
-MH Infrared Speed Sensor Module (FC-03)
-Arduino Nano
-MCP2515 CAN BUS Module
-SeeedStudio 2-CH CAN FD HAT
-Raspberry Pi 4B
-WaveShare 7.9inch DSI LCD
-## Software Design
+### Hardware
+- [WaveShare JetRacer AI Kit)](https://www.waveshare.com/wiki/JetRacer_AI_Kit)
+- [MH Infrared Speed Sensor Module (FC-03)](https://einstronic.com/product/infrared-speed-sensor-module/)
+- [Arduino Nano](https://docs.arduino.cc/hardware/nano/)
+- [MCP2515 CAN BUS Module](https://ww1.microchip.com/downloads/aemDocuments/documents/APID/ProductDocuments/DataSheets/MCP2515-Family-Data-Sheet-DS20001801K.pdf)
+- [SeeedStudio 2-CH CAN FD HAT](https://wiki.seeedstudio.com/2-Channel-CAN-BUS-FD-Shield-for-Raspberry-Pi/)
+- [Raspberry Pi 4B](https://www.raspberrypi.com/products/raspberry-pi-4-model-b/)
+- [WaveShare 7.9inch DSI LCD](https://www.waveshare.com/wiki/7.9inch_DSI_LCD)
+
+### Software
+- Main application: C++(Qt framework)
+- Firmware(for Arduino): C
+- Host OS(for development): Ubuntu 20.04
+- Raspberry Pi: Rasbian Desktop 64bit
+- IDE: Qt Creator, Arduino IDE
+- Version control: Git
 
 ## Configuration
 ### Display - WaveShare 7.9inch SDI LCD
