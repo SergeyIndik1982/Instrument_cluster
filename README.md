@@ -15,7 +15,14 @@ An instrument cluster, also known as a dashboard cluster or gauge cluster, is a 
 
 ## System Architecture
 <img width="811" height="352" alt="image" src="https://github.com/user-attachments/assets/7c7e426c-a202-445f-92a1-264c7668ca94" />
-
+## Components and Environment
+WaveShare JetRacer AI Kit)
+MH Infrared Speed Sensor Module (FC-03)
+Arduino Nano
+MCP2515 CAN BUS Module
+SeeedStudio 2-CH CAN FD HAT
+Raspberry Pi 4B
+WaveShare 7.9inch DSI LCD
 ## Software Design
 
 ## Configuration
