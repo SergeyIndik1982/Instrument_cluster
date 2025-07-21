@@ -24,6 +24,7 @@ You can also find those topics on our Wiki.
 - [SeeedStudio 2-CH CAN FD HAT](https://wiki.seeedstudio.com/2-Channel-CAN-BUS-FD-Shield-for-Raspberry-Pi/)
 - [Raspberry Pi 4B](https://www.raspberrypi.com/products/raspberry-pi-4-model-b/)
 - [WaveShare 7.9inch DSI LCD](https://www.waveshare.com/wiki/7.9inch_DSI_LCD)
+
 ![1732800781849](https://github.com/user-attachments/assets/3d28ee5e-4d9a-4bea-acec-6a306ba6de0f)
 ![1732800781113](https://github.com/user-attachments/assets/de8b899a-3bb0-457d-a913-de6557af1614)
 ![1732800781309](https://github.com/user-attachments/assets/a9b81989-b963-4a2e-ac2b-aeb1d4c27ae5)
@@ -70,6 +71,7 @@ Comment=Start Instrument Cluster at startup
 ```
 ## Result
 We tested the prototype both on the stand and on the track, as a result all data is displayed correctly, both speed and battery charge
+
 ![1732800781657](https://github.com/user-attachments/assets/b777f154-d483-421c-bcd0-4d8319991da8)
 ![1732800781187](https://github.com/user-attachments/assets/6c531da4-a5ff-458f-9b56-0bcb2c2dd2f9)
 
