@@ -24,6 +24,10 @@ You can also find those topics on our Wiki.
 - [SeeedStudio 2-CH CAN FD HAT](https://wiki.seeedstudio.com/2-Channel-CAN-BUS-FD-Shield-for-Raspberry-Pi/)
 - [Raspberry Pi 4B](https://www.raspberrypi.com/products/raspberry-pi-4-model-b/)
 - [WaveShare 7.9inch DSI LCD](https://www.waveshare.com/wiki/7.9inch_DSI_LCD)
+![1732800781113](https://github.com/user-attachments/assets/d496b15e-c0eb-493d-89ba-32ad1951ff7b)
+![1732800781309](https://github.com/user-attachments/assets/b74940e5-693f-4b1a-858c-19ddf822bdbe)
+![1732800781506](https://github.com/user-attachments/assets/efad57eb-6ce2-44f7-b4ba-ff3cb2e8e1bd)
+![1732800781849](https://github.com/user-attachments/assets/c5bf4984-6e8d-4a1a-93a7-ed92b7038b33)
 
 ### Software
 - Main application: C++(Qt framework)
@@ -42,7 +46,6 @@ After we have written RaspberryPi OS (Debian Bookwarm, 64bit) to a sd card, we h
 dtoverlay=vc4-kms-v3d
 dtoverlay=vc4-kms-dsi-waveshare-panel,7_9_inch
 ```
-![1732800781113](https://github.com/user-attachments/assets/066e871e-1df6-4940-9a7b-6d60863dd63e)
 
 ### SeeedStudio 2-CH CAN HAT for Raspberry Pi
 [Followed instructions on here](https://wiki.seeedstudio.com/2-Channel-CAN-BUS-FD-Shield-for-Raspberry-Pi/)
