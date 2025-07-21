@@ -81,3 +81,4 @@ The project is very important for understanding the interaction of sensors with 
 ## Contributors
 https://github.com/isragogreen
 https://github.com/Clearsu
+https://github.com/SergeyIndik1982
