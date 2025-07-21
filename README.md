@@ -76,5 +76,5 @@ We tested the prototype both on the stand and on the track, as a result all data
 ![1732800781187](https://github.com/user-attachments/assets/6c531da4-a5ff-458f-9b56-0bcb2c2dd2f9)
 
 ## Conclusion
-
+The project is very important for understanding the interaction of sensors with the controller and computer, as well as data transmission via the CAN system, and processing this data for display on the screen
 ## Contributors
