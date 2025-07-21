@@ -1,4 +1,4 @@
-![diagram](https://github.com/user-attachments/assets/8ae8d5d4-0fb4-49fa-a1e7-920512416694)# Instrument_cluster
+
 This project involves the implementation of an instrument cluster as the second DES (Distributed Embedded Systems) project in the SEA:ME curriculum.
 
 ## Overview
@@ -13,8 +13,7 @@ An instrument cluster, also known as a dashboard cluster or gauge cluster, is a 
 You can also find those topics on our Wiki.
 
 ## System Architecture
-<img width="811" height="352" alt="image" src="https://github.com/user-attachments/assets/ab95cbd4-ed7e-4944-9117-dcbd723b835f" />
-
+![diagram](https://github.com/user-attachments/assets/8ae8d5d4-0fb4-49fa-a1e7-920512416694)# Instrument_cluster
 
 
 ## Components and Environment
