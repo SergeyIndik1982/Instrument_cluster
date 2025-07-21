@@ -1,4 +1,4 @@
-# Instrument_cluster
+![diagram](https://github.com/user-attachments/assets/8ae8d5d4-0fb4-49fa-a1e7-920512416694)# Instrument_cluster
 This project involves the implementation of an instrument cluster as the second DES (Distributed Embedded Systems) project in the SEA:ME curriculum.
 
 ## Overview
@@ -13,7 +13,9 @@ An instrument cluster, also known as a dashboard cluster or gauge cluster, is a 
 You can also find those topics on our Wiki.
 
 ## System Architecture
-<img src="./diagram.svg">
+<img width="811" height="352" alt="image" src="https://github.com/user-attachments/assets/ab95cbd4-ed7e-4944-9117-dcbd723b835f" />
+
+
 
 ## Components and Environment
 ### Hardware
@@ -71,7 +73,7 @@ Comment=Start Instrument Cluster at startup
 ```
 ## Result
 We tested the prototype both on the stand and on the track, as a result all data is displayed correctly, both speed and battery charge
-
+<img width="1278" height="399" alt="380765989-d907358c-8378-414e-980e-308d59534e3e" src="https://github.com/user-attachments/assets/4b7f9cc1-55bc-48b1-b525-859e323fe372" />
 ![1732800781657](https://github.com/user-attachments/assets/b777f154-d483-421c-bcd0-4d8319991da8)
 ![1732800781187](https://github.com/user-attachments/assets/6c531da4-a5ff-458f-9b56-0bcb2c2dd2f9)
 
