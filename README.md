@@ -42,6 +42,8 @@ After we have written RaspberryPi OS (Debian Bookwarm, 64bit) to a sd card, we h
 dtoverlay=vc4-kms-v3d
 dtoverlay=vc4-kms-dsi-waveshare-panel,7_9_inch
 ```
+![1732800781113](https://github.com/user-attachments/assets/066e871e-1df6-4940-9a7b-6d60863dd63e)
+
 ### SeeedStudio 2-CH CAN HAT for Raspberry Pi
 [Followed instructions on here](https://wiki.seeedstudio.com/2-Channel-CAN-BUS-FD-Shield-for-Raspberry-Pi/)
 To activate CAN protocol on Raspberry Pi, you need to run:
