@@ -69,7 +69,7 @@ Comment[en_US]=Start Instrument Cluster at startup
 Comment=Start Instrument Cluster at startup
 ```
 ## Result
-Мы простестировали прототип как на стенде, так и треке, в результате все данные отображаются корректно, как скорость, так и заряд батареи
+We tested the prototype both on the stand and on the track, as a result all data is displayed correctly, both speed and battery charge
 ![1732800781657](https://github.com/user-attachments/assets/b777f154-d483-421c-bcd0-4d8319991da8)
 ![1732800781187](https://github.com/user-attachments/assets/6c531da4-a5ff-458f-9b56-0bcb2c2dd2f9)
 
