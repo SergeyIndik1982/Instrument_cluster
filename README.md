@@ -24,10 +24,9 @@ You can also find those topics on our Wiki.
 - [SeeedStudio 2-CH CAN FD HAT](https://wiki.seeedstudio.com/2-Channel-CAN-BUS-FD-Shield-for-Raspberry-Pi/)
 - [Raspberry Pi 4B](https://www.raspberrypi.com/products/raspberry-pi-4-model-b/)
 - [WaveShare 7.9inch DSI LCD](https://www.waveshare.com/wiki/7.9inch_DSI_LCD)
-![1732800781113](https://github.com/user-attachments/assets/d496b15e-c0eb-493d-89ba-32ad1951ff7b)
-![1732800781309](https://github.com/user-attachments/assets/b74940e5-693f-4b1a-858c-19ddf822bdbe)
-![1732800781506](https://github.com/user-attachments/assets/efad57eb-6ce2-44f7-b4ba-ff3cb2e8e1bd)
-![1732800781849](https://github.com/user-attachments/assets/c5bf4984-6e8d-4a1a-93a7-ed92b7038b33)
+![1732800781849](https://github.com/user-attachments/assets/3d28ee5e-4d9a-4bea-acec-6a306ba6de0f)
+![1732800781113](https://github.com/user-attachments/assets/de8b899a-3bb0-457d-a913-de6557af1614)
+![1732800781309](https://github.com/user-attachments/assets/a9b81989-b963-4a2e-ac2b-aeb1d4c27ae5)
 
 ### Software
 - Main application: C++(Qt framework)
